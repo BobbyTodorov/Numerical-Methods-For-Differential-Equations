@@ -1,0 +1,106 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"\:0418\:043c\:043f\:043b\:0435\:043c\:0435\:043d\:0442\:0438\:0440\:0430\:0439\:0442\:0435"," ","\:0434\:0438\:0444\:0435\:0440\:0435\:043d\:0447\:043d\:0430"," ","\:0441\:0445\:0435\:043c\:0430"," ","\:0437\:0430"," ","\:0443\:0440\:0430\:0432\:043d\:0435\:043d\:0438\:0435\:0442\:043e"," ","\:043d\:0430"," ","\:0441\:0442\:0440\:0443\:043d\:0430\:0442\:0430",":","\n",Cell[
+BoxData[
+SubscriptBox["u","tt"]]],StyleBox[RowBox[{"+"," "}]],"c"," ",Cell[
+BoxData[SubscriptBox[
+"u","xx"]]],StyleBox[RowBox[{" ","="}]],"0","\n","u","(","x",",","0",")=",Cell[
+BoxData[
+SubscriptBox["u","0"]]],"(","x","),","\n",Cell[
+BoxData[SubscriptBox["u","t"]]],"(","x",",","0",")=","0",",","\n","u","(","0",",","t",")=",Cell[
+BoxData[
+SubscriptBox["u","L"]]],"(","t","),","\n","u","(","1",",","t",")=",Cell[
+BoxData[
+SubscriptBox["u","R"]]],"(","t",")."}],"Section",ExpressionUUID -> "96379b67-739b-4609-949f-e31b8f11a7cb"],Cell[
+BoxData[
+RowBox[{RowBox[{"springEquation","[",RowBox[{"l_",","," ","T_",","," ","h_",","," ","uL_",","," ","uR_",","," ","u0_",","," ","c_"}],"]"}]," ",":="," ",RowBox[
+{"(","\n","   ",RowBox[{RowBox[{"\[Tau]"," ","="," ",RowBox[{"h","/",RowBox[{"(",RowBox[
+{"2","*","c"}],")"}]}]}],";","\n","   ",RowBox[{"n"," ","="," ",RowBox[{"Ceiling","[",RowBox[
+{"l","/","h"}],"]"}]}],";","\n","   ",RowBox[{"m"," ","="," ",RowBox[{"Ceiling","[",RowBox[
+{"T","/","\[Tau]"}],"]"}]}],";","\n","   ",RowBox[{"x"," ","="," ",RowBox[{"Table","[",RowBox[
+{RowBox[{"i","*","h"}],","," ",RowBox[{"{",RowBox[{"i",","," ","0",","," ","n"}],"}"}]}],"]"}]}],";","\n","   ",RowBox[
+{"t"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{"j","*","\[Tau]"}],","," ",RowBox[
+{"{",RowBox[{"j",","," ","0",","," ","m"}],"}"}]}],"]"}]}],";","\n","   ",RowBox[
+{"y"," ","="," ",RowBox[{"Table","[",RowBox[{"0",","," ",RowBox[{"{",RowBox[{"n"," ","+"," ","1"}],"}"}],","," ",RowBox[
+{"{",RowBox[{"m"," ","+"," ","1"}],"}"}]}],"]"}]}],";","\n","   ","\n","   ",RowBox[
+{"(*",RowBox[{"First"," ","initial"," ","condition"}]," ","*)"}],"\n","   ",RowBox[
+{"For","[",RowBox[{RowBox[{"i"," ","="," ","1"}],","," ",RowBox[{"i"," ","\[LessEqual]"," ",RowBox[
+{"n"," ","+"," ","1"}]}],","," ",RowBox[{"i","++"}],",","\n","    ",RowBox[{RowBox[
+{RowBox[{"y","[",RowBox[{"[",RowBox[{"i",","," ","1"}],"]"}],"]"}]," ","="," ",RowBox[
+{"u0","[",RowBox[{"x","[",RowBox[{"[","i","]"}],"]"}],"]"}]}],";"}]}],"\n","    ","]"}],";","\n","   ","\n","   ",RowBox[
+{"(*",RowBox[{"Second"," ","initial"," ","condition"}],"*)"}],"\[NonBreakingSpace]\[NonBreakingSpace]","\n","   ",RowBox[
+{"For","[",RowBox[{RowBox[{"i"," ","="," ","2"}],","," ",RowBox[{"i"," ","\[LessEqual]"," ","n"}],","," ",RowBox[
+{"i","++"}],",","\n","    ",RowBox[{RowBox[{RowBox[{"y","[",RowBox[{"[",RowBox[{"i",","," ","2"}],"]"}],"]"}]," ","=","  ",RowBox[
+{RowBox[{"y","[",RowBox[{"[",RowBox[{"i",","," ","1"}],"]"}],"]"}]," ","+"," ",RowBox[
+{RowBox[{"(",RowBox[{"1","/","2"}],")"}],"*",RowBox[{"(",RowBox[{RowBox[{"(",RowBox[
+{RowBox[{"(",RowBox[{"c","*","\[Tau]"}],")"}],"/","h"}],")"}],"^","2"}],")"}],"*",RowBox[
+{"(",RowBox[{RowBox[{"y","[",RowBox[{"[",RowBox[{RowBox[{"i"," ","+"," ","1"}],","," ","1"}],"]"}],"]"}]," ","-","  ",RowBox[
+{"2","*",RowBox[{"y","[",RowBox[{"[",RowBox[{"i",","," ","1"}],"]"}],"]"}]}]," ","+"," ",RowBox[
+{"y","[",RowBox[{"[",RowBox[{RowBox[{"i"," ","-"," ","1"}],","," ","1"}],"]"}],"]"}]}],")"}]}]}]}],";"}]}],"\n","]"}],";","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]","\n","   ",RowBox[
+{"(*",RowBox[{"left"," ","and"," ","right"," ","boundaty"," ","conditions"," ","on"," ","the"," ","second"," ","layer"}],"*)"}],"\n","\[NonBreakingSpace]",RowBox[
+{RowBox[{"y","[",RowBox[{"[",RowBox[{"1",","," ","2"}],"]"}],"]"}]," ","="," ",RowBox[
+{"uL","[",RowBox[{"t","[",RowBox[{"[","2","]"}],"]"}],"]"}]}],";","\n","    ",RowBox[
+{RowBox[{"y","[",RowBox[{"[",RowBox[{RowBox[{"n"," ","+"," ","1"}],","," ","2"}],"]"}],"]"}]," ","="," ",RowBox[
+{"uR","[",RowBox[{"t","[",RowBox[{"[","2","]"}],"]"}],"]"}]}],";","\n","\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]","\n","   ",RowBox[
+{"For","[",RowBox[{RowBox[{"j"," ","="," ","2"}],","," ",RowBox[{"j"," ","\[LessEqual]"," ","m"}],","," ",RowBox[
+{"j","++"}],",","\n","    ",RowBox[{"(*"," ",RowBox[{"left"," ","and"," ","right"," ","boundary"," ","conditions"}],"*)"}],"\n","    ",RowBox[
+{RowBox[{RowBox[{"y","[",RowBox[{"[",RowBox[{"1",","," ",RowBox[{"j"," ","+"," ","1"}]}],"]"}],"]"}]," ","="," ",RowBox[
+{"uL","[",RowBox[{"t","[",RowBox[{"[",RowBox[{"j"," ","+"," ","1"}],"]"}],"]"}],"]"}]}],";","\n","    ",RowBox[
+{RowBox[{"y","[",RowBox[{"[",RowBox[{RowBox[{"n"," ","+"," ","1"}],","," ",RowBox[
+{"j"," ","+"," ","1"}]}],"]"}],"]"}]," ","="," ",RowBox[{"uR","[",RowBox[{"t","[",RowBox[
+{"[",RowBox[{"j"," ","+"," ","1"}],"]"}],"]"}],"]"}]}],";","\n","    ","\n","    ",RowBox[
+{"For","[",RowBox[{RowBox[{"i"," ","="," ","2"}],","," ",RowBox[{"i"," ","\[LessEqual]"," ","n"}],","," ",RowBox[
+{"i","++"}],",","\n","     ",RowBox[{RowBox[{RowBox[{"y","[",RowBox[{"[",RowBox[{"i",","," ",RowBox[
+{"j"," ","+"," ","1"}]}],"]"}],"]"}]," ","="," ",RowBox[{RowBox[{"2","*",RowBox[{"(",RowBox[
+{"1"," ","-"," ",RowBox[{RowBox[{"(",RowBox[{RowBox[{"(",RowBox[{"c","*","\[Tau]"}],")"}],"/","h"}],")"}],"^","2"}]}],")"}],"*",RowBox[
+{"y","[",RowBox[{"[",RowBox[{"i",","," ","j"}],"]"}],"]"}]}]," ","-"," ",RowBox[{"y","[",RowBox[
+{"[",RowBox[{"i",","," ",RowBox[{"j"," ","-"," ","1"}]}],"]"}],"]"}]," ","+"," ",RowBox[
+{RowBox[{"(",RowBox[{RowBox[{"(",RowBox[{RowBox[{"(",RowBox[{"c","*","\[Tau]"}],")"}],"/","h"}],")"}],"^","2"}],")"}],"*",RowBox[
+{"(",RowBox[{RowBox[{"y","[",RowBox[{"[",RowBox[{RowBox[{"i"," ","+"," ","1"}],","," ","j"}],"]"}],"]"}]," ","+"," ",RowBox[
+{"y","[",RowBox[{"[",RowBox[{RowBox[{"i"," ","-"," ","1"}],","," ","j"}],"]"}],"]"}]}],")"}]}]}]}],";"}]}],"\n","     ","]"}],";"}]}],"\n","    ","]"}],";","\n","   ","\n","   ",RowBox[
+{"{",RowBox[{"x",","," ","t",","," ","y"}],"}"}]}],"\n","  ",")"}]}]],"Input",CellLabel -> "In[37]:= ",
+ExpressionUUID -> "c9ccb048-f141-4598-88f9-d00563a70de2"]},Open],ExpressionUUID -> "3a84fa53-eb2e-43a2-aa49-b24ba446c21c"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"\:0422\:0435\:0441\:0442\:0432\:0430\:043d\:0435"," ","\:043d\:0430"," ","\:043c\:0435\:0442\:043e\:0434\:0430"," ","\:0432\:044a\:0440\:0445\:0443"," ","\:0437\:0430\:0434\:0430\:0447\:0430\:0442\:0430","\n",Cell[
+BoxData[
+SubscriptBox["u","tt"]],ExpressionUUID -> "fe999700-2b19-47f4-a6cc-d130669e9c86"],StyleBox[
+RowBox[{"+"," "}]],Cell[
+BoxData[SubscriptBox["u","xx"]],ExpressionUUID -> "52be733c-4c24-43cd-bf6d-f0df385ad589"],StyleBox[
+RowBox[{" ","="}]],"0",StyleBox[RowBox[{","," "}]],"0","<","x","<","1",StyleBox[RowBox[
+{","," "}]],"0","<","t","<=","4",",","\n","u","(","x",",","0",")=","x","(","x-1","),","\n",Cell[
+BoxData[
+SubscriptBox["u","t"]],ExpressionUUID -> "cb45be8b-bba5-47e4-a20c-1a0aa7ee0fe9"],"(","x",",","0",")=","0",",","\n","u","(","0",",","t",")=","0",",","\n","u","(","1",",","t",")=","0","."}],
+"Section",ExpressionUUID -> "a16e308d-5bae-49c9-b64c-89175cbe2f97"],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{RowBox[{"uL","[","t_","]"}]," ",":="," ","0"}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{"uR","[","t_","]"}]," ",":="," ","0"}],";"}],"\n",RowBox[{RowBox[
+{RowBox[{"u0","[","x_","]"}]," ",":="," ",RowBox[{"x",RowBox[{"(",RowBox[{"x"," ","-"," ","1"}],")"}]}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{RowBox[{"{",RowBox[{"apprX",","," ","apprT",","," ","apprY"}],"}"}]," ","="," ",RowBox[
+{"springEquation","[",RowBox[{"1",","," ","4",",","0.01",","," ","uL",","," ","uR",","," ","u0",","," ","1"}],"]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{"Manipulate","[","\n"," ",RowBox[{RowBox[{"ListPlot","[",RowBox[
+{RowBox[{"Transpose","[",RowBox[{"{",RowBox[{"apprX",","," ",RowBox[{"apprY","[",RowBox[
+{"[",RowBox[{"All",","," ","j"}],"]"}],"]"}]}],"}"}],"]"}],","," ",RowBox[{"PlotRange"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"0",","," ","1"}],"}"}],","," ",RowBox[{"{",RowBox[
+{RowBox[{"-","0.3"}],","," ","0.3"}],"}"}]}],"}"}]}]}],"]"}],",","\n"," ",RowBox[
+{"{",RowBox[{"j",","," ","1",","," ",RowBox[{"Length","[","apprT","]"}],","," ","10"}],"}"}]}],"\n"," ","]"}]}],
+"Input",CellLabel -> "In[38]:= ",ExpressionUUID -> "5ffe6fa3-cdf1-4e50-a0b1-008f4ae093f4"],Cell[
+BoxData[
+TagBox[StyleBox[DynamicModuleBox[{Set[j$$,1],Set[Typeset`show$$,True],Set[Typeset`bookmarkList$$,
+{}],Set[Typeset`bookmarkMode$$,"Menu"],Typeset`animator$$,Set[Typeset`animvar$$,1],Set[
+Typeset`name$$,"\"untitled\""],Set[Typeset`specs$$,{{Hold[j$$],1,801,10}}],Set[Typeset`size$$,
+Automatic],Set[Typeset`update$$,0],Set[Typeset`initDone$$,False],Set[Typeset`skipInitDone$$,
+True]},DynamicBox[Manipulate`ManipulateBoxes[1,StandardForm,RuleDelayed["Variables",
+{Set[j$$,1]}],RuleDelayed["ControllerVariables",{}],RuleDelayed["OtherVariables",
+{Typeset`show$$,Typeset`bookmarkList$$,Typeset`bookmarkMode$$,Typeset`animator$$,Typeset`animvar$$,Typeset`name$$,Typeset`specs$$,Typeset`size$$,Typeset`update$$,Typeset`initDone$$,Typeset`skipInitDone$$}],
+RuleDelayed["Body",ListPlot[Transpose[{apprX,Part[apprY,All,j$$]}],PlotRange -> {{0,1},{-0.3,0.3}}]],
+RuleDelayed["Specifications",{{j$$,1,801,10}}],RuleDelayed["Options",{}],RuleDelayed[
+"DefaultOptions",{}]],SingleEvaluation -> True],RuleDelayed[DynamicModuleValues,{}],
+RuleDelayed[Deinitialization,None],RuleDelayed[UntrackedVariables,{Typeset`size$$}],
+SynchronousInitialization -> True,RuleDelayed[UnsavedVariables,{Typeset`initDone$$}],
+RuleDelayed[UndoTrackedVariables,{Typeset`show$$,Typeset`bookmarkMode$$}],ExpressionUUID -> "c7a7de63-f607-4b3a-8bd4-64656cdb2e0a"],
+"Manipulate",Deployed -> True,StripOnInput -> False],Manipulate`InterpretManipulate[
+1]],StandardForm],"Output",CellLabel -> "Out[42]= ",ExpressionUUID -> "78952c5e-a52a-4cd1-adb0-937c738283d1"]},
+Open],ExpressionUUID -> "8cdb9509-7862-4df5-9536-5384ff658203"]},Open],ExpressionUUID -> "9ea02a67-3bd1-4277-bf77-b9148f970f8c"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "12.2 for Wolfram Cloud 1.57.0.2 (December 8, 2020)"]
